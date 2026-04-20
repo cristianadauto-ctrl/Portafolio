@@ -367,3 +367,18 @@ html {
         margin-bottom: 20px;
     }
 }
+
+/* Estilo para el mini logo de la navegación */
+.logo-name {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el logo y tu nombre */
+    font-weight: bold;
+}
+
+.nav-mini-logo {
+    width: 30px;  /* Ajusta el tamaño según prefieras */
+    height: auto;
+    border-radius: 4px; /* Opcional: redondea un poco las esquinas */
+    object-fit: contain;
+}
