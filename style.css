@@ -382,3 +382,32 @@ html {
     border-radius: 4px; /* Opcional: redondea un poco las esquinas */
     object-fit: contain;
 }
+
+/* Contenedor del logo en forma de círculo */
+.logo-circle {
+    width: 40px;           /* Tamaño del círculo */
+    height: 40px;
+    background-color: white; /* Fondo blanco por si el logo es transparente */
+    border-radius: 50%;    /* Esto hace que sea un círculo perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;      /* Corta la imagen si es muy grande */
+    border: 2px solid #004a99; /* Color institucional opcional */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra suave */
+}
+
+/* Ajuste de la imagen dentro del círculo */
+.logo-circle img {
+    width: 80%;            /* Ajusta este % según cómo se vea tu logo */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Alineación del nombre con el círculo */
+.logo-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;             /* Espacio entre el círculo y tu nombre */
+    font-weight: 600;
+}
