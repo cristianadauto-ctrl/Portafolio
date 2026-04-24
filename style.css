@@ -1,4 +1,4 @@
-/* 1. VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL */
+
 :root {
     --bg-dark: #0f172a;
     --accent-cyan: #22d3ee;
@@ -23,7 +23,6 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. ANIMACIÓN DE ENTRADA */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -40,7 +39,6 @@ body {
     animation: fadeInUp 1s ease forwards;
 }
 
-/* 3. NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -73,7 +71,6 @@ body {
     color: var(--accent-cyan);
 }
 
-/* 4. HERO */
 .hero-section {
     padding: 160px 20px 100px;
     display: flex;
@@ -96,14 +93,12 @@ body {
 }
 
 .hero-logo {
-    width: 220px;           /* Tamaño reducido para que no se desborde [cite: 647, 695] */
-    height: auto;           /* Mantiene la proporción original */
+    width: 220px;          
+    height: auto;          
     margin-bottom: 25px;
     
-    /* Brillo base constante: muy suave para dar profundidad */
-    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.3)); /* [cite: 988] */
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.3)); 
     
-    /* Transición de 0.5s para que el brillo entre con total suavidad */
     transition: filter 0.5s ease, transform 0.3s ease;
     cursor: pointer;
 }
@@ -370,10 +365,11 @@ html {
 
 /* Estilo para el mini logo de la navegación */
 .logo-name {
-    display: flex;
+   display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el logo y tu nombre */
-    font-weight: bold;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .nav-mini-logo {
@@ -385,29 +381,21 @@ html {
 
 /* Contenedor del logo en forma de círculo */
 .logo-circle {
-    width: 40px;           /* Tamaño del círculo */
-    height: 40px;
-    background-color: white; /* Fondo blanco por si el logo es transparente */
-    border-radius: 50%;    /* Esto hace que sea un círculo perfecto */
+    width: 32px;            /* Tamaño "pequeñito" para la barra de navegación */
+    height: 32px;
+    background-color: white; 
+    border-radius: 50%;     
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;      /* Corta la imagen si es muy grande */
-    border: 2px solid #004a99; /* Color institucional opcional */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra suave */
+    overflow: hidden;       
+    border: 1.5px solid var(--accent-cyan); /* Borde cyan para combinar con tu tema */
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); /* Sombra suave */
 }
 
 /* Ajuste de la imagen dentro del círculo */
 .logo-circle img {
-    width: 80%;            /* Ajusta este % según cómo se vea tu logo */
+    width: 75%;            /* Ajusta este % según cómo se vea tu logo */
     height: auto;
     object-fit: contain;
-}
-
-/* Alineación del nombre con el círculo */
-.logo-name {
-    display: flex;
-    align-items: center;
-    gap: 12px;             /* Espacio entre el círculo y tu nombre */
-    font-weight: 600;
 }
