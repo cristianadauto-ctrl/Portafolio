@@ -363,18 +363,38 @@ html {
     }
 }
 
-.logo-name {
+/* Contenedor de Marca (Logo + Nombre) */
+.brand-section {
     display: flex;
     align-items: center;
-    gap: 12px;           /* Espacio entre logo y nombre */
-    font-weight: 600;
-    font-size: 0.95rem;  /* Tamaño de la letra */
+    gap: 12px; /* Espacio entre el logo y el nombre */
 }
 
+/* El logo rectangular/escudo sin círculo */
 .nav-logo {
-    height: 28px;        /* Altura pequeña y proporcional al texto */
-    width: auto;         /* Mantiene la forma original del logo */
+    height: 32px;        /* Altura controlada para que sea recíproca al texto */
+    width: auto;         /* Mantiene la proporción original */
     object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Un brillo sutil opcional */
+    /* Un brillo sutil para que resalte en el fondo oscuro */
+    filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.3));
 }
+
+/* Tu nombre al lado del logo */
+.user-name {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* Evita que el nombre se rompa en dos líneas */
+}
+
+/* Asegura que el contenedor principal mantenga los lados opuestos */
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
