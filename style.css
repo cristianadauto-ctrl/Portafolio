@@ -363,39 +363,18 @@ html {
     }
 }
 
-/* Estilo para el mini logo de la navegación */
 .logo-name {
-   display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.nav-mini-logo {
-    width: 30px;  /* Ajusta el tamaño según prefieras */
-    height: auto;
-    border-radius: 4px; /* Opcional: redondea un poco las esquinas */
-    object-fit: contain;
-}
-
-/* Contenedor del logo en forma de círculo */
-.logo-circle {
-    width: 32px;            /* Tamaño "pequeñito" para la barra de navegación */
-    height: 32px;
-    background-color: white; 
-    border-radius: 50%;     
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;       
-    border: 1.5px solid var(--accent-cyan); /* Borde cyan para combinar con tu tema */
-    box-shadow: 0 0 10px rgba(34, 211, 238, 0.2); /* Sombra suave */
+    gap: 12px;           /* Espacio entre logo y nombre */
+    font-weight: 600;
+    font-size: 0.95rem;  /* Tamaño de la letra */
 }
 
-/* Ajuste de la imagen dentro del círculo */
-.logo-circle img {
-    width: 75%;            /* Ajusta este % según cómo se vea tu logo */
-    height: auto;
+.nav-logo {
+    height: 28px;        /* Altura pequeña y proporcional al texto */
+    width: auto;         /* Mantiene la forma original del logo */
     object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)); /* Un brillo sutil opcional */
 }
+
