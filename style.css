@@ -328,4 +328,34 @@ body {
     .profile-header { margin-bottom: 20px; }
 }
 
+/* --- EFECTO DE BARRA LUMINOSA EN TÍTULO --- */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espacio entre la línea y el título */
+    margin-bottom: 5px;
+}
 
+.glow-line {
+    width: 6px;
+    height: 45px; /* Altura de la línea */
+    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+    box-shadow: 0 0 15px var(--accent-cyan);
+    border-radius: 10px;
+}
+
+.title-container h1 {
+    margin: 0; /* Quitamos márgenes para que la línea no se mueva */
+    text-transform: uppercase;
+    font-size: 2.2rem;
+}
+
+/* --- AJUSTE DEL PÁRRAFO --- */
+.hero-description {
+    margin-top: 30px !important; /* Forzamos que baje el párrafo */
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
