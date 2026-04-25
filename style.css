@@ -1,4 +1,4 @@
-
+/* 1. VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL */
 :root {
     --bg-dark: #0f172a;
     --accent-cyan: #22d3ee;
@@ -23,15 +23,10 @@ body {
     overflow-x: hidden;
 }
 
+/* 2. ANIMACIÓN DE ENTRADA */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-in {
@@ -39,6 +34,7 @@ body {
     animation: fadeInUp 1s ease forwards;
 }
 
+/* 3. NAVBAR Y LOGO SUPERIOR */
 .navbar {
     position: fixed;
     top: 0;
@@ -59,6 +55,31 @@ body {
     align-items: center;
 }
 
+/* Estructura para el Logo de la UPLA y tu Nombre */
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+.nav-logo {
+    height: 36px; 
+    width: auto;
+    object-fit: contain;
+    display: block; 
+    filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.3));
+}
+
+.user-name {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    line-height: 1; 
+    margin: 0;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -71,6 +92,7 @@ body {
     color: var(--accent-cyan);
 }
 
+/* 4. HERO SECTION (TARJETA PRINCIPAL) */
 .hero-section {
     padding: 160px 20px 100px;
     display: flex;
@@ -92,62 +114,60 @@ body {
     opacity: 0;
 }
 
-.hero-glass h1 {
-    position: relative;
-    display: inline-block; /* Importante para que la barra se pegue al texto */
-    padding-left: 25px;    /* Espacio para la barra */
-    margin-bottom: 15px;   /* Espacio respecto al párrafo de abajo */
-}
-
-.hero-glass h1::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 15%;              /* La barra no ocupa todo el alto, para que se vea pro */
-    height: 70%;
-    width: 5px;            /* Grosor de la barra */
-    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
-    box-shadow: 0 0 15px var(--accent-cyan);
-    border-radius: 10px;   /* Puntas redondeadas */
-}
-
-/
-.hero-glass p {
-    margin-top: 30px;   
-    margin-bottom: 20px; 
-    max-width: 600px;    
-}
-
 .hero-logo {
-    width: 220px;          
-    height: auto;          
+    width: 220px;
+    height: auto;
     margin-bottom: 25px;
-    
-    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.3)); 
-    
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.3));
     transition: filter 0.5s ease, transform 0.3s ease;
     cursor: pointer;
 }
 
 .hero-logo:hover {
-    /* Combinamos dos capas: una intensa cerca del borde y una muy difuminada afuera */
-    filter: drop-shadow(0 0 5px var(--accent-cyan)) 
-            drop-shadow(0 0 15px var(--accent-cyan)); /* Sombra más amplia = Brillo más suave [cite: 988, 991] */
-            
-    transform: scale(1.01); /* Pequeño realce visual */
+    filter: drop-shadow(0 0 5px var(--accent-cyan)) drop-shadow(0 0 15px var(--accent-cyan));
+    transform: scale(1.01);
 }
+
+/* === AQUÍ ESTÁ EL NUEVO EFECTO GLOW PARA TU TÍTULO === */
+.hero-glass h1 {
+    position: relative;
+    display: inline-block;
+    padding-left: 25px; /* Espacio para que quepa la barra */
+    margin-bottom: 5px;
+}
+
+.hero-glass h1::before {
+    content: ''; /* ¡Esto es vital para que la barra exista! */
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 5px;
+    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+    box-shadow: 0 0 15px var(--accent-cyan);
+    border-radius: 10px;
+}
+
+/* === AQUÍ SE BAJA EL TEXTO DEL PÁRRAFO === */
+.hero-glass p {
+    margin-top: 25px; 
+    margin-bottom: 25px; 
+    line-height: 1.6;
+    max-width: 600px; /* Evita que el texto sea demasiado largo */
+}
+
 .hero-actions {
-    margin-top: 30px;      /* Reducido de 60px a 30px para subir los botones [cite: 259, 290] */
+    margin-top: 10px; 
     display: flex;
-    gap: 20px;            /* Espacio horizontal entre botones */
+    gap: 20px; 
     justify-content: center;
-    align-items: center;  /* Esto asegura que "Ver Perfil" no esté más arriba ni más abajo  */
+    align-items: center; 
 }
 
 .btn-main {
     background: var(--accent-cyan);
     color: var(--bg-dark);
-    padding: 12px 25px;   /* Padding equilibrado */
+    padding: 12px 25px;
     border-radius: 12px;
     text-decoration: none;
     font-weight: bold;
@@ -164,14 +184,14 @@ body {
     color: var(--accent-cyan);
     text-decoration: none;
     font-weight: bold;
-    padding: 12px 20px;   /* Misma altura que el botón principal para que cuadre [cite: 291] */
+    padding: 12px 20px;
     border-radius: 12px;
-    border: 1px solid transparent; /* Para mantener el tamaño igual al principal */
+    border: 1px solid transparent;
     display: inline-block;
     transition: 0.3s ease;
 }
 
-/* 5. CARDS GENERALES (EFECTO PRO) */
+/* 5. CARDS DE ACCESO RÁPIDO Y SEMANAS */
 .q-card,
 .week-card {
     background: rgba(255, 255, 255, 0.05);
@@ -182,14 +202,12 @@ body {
     transform: translateY(0) scale(1);
 }
 
-/* Q CARDS */
 .q-card {
     padding: 30px;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
 }
 
-/* WEEK CARDS */
 .week-card {
     padding: 2rem;
     text-align: center;
@@ -198,26 +216,17 @@ body {
     font-weight: bold;
     opacity: 0;
     animation: fadeInUp 1s ease forwards;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* 🔥 EFECTO HOVER MODERNO */
 .q-card:hover,
 .week-card:hover {
     transform: translateY(-12px) scale(1.03);
-
-    /* borde iluminado */
     border-color: #22d3ee;
-
-    /* glow exterior */
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(34, 211, 238, 0.4);
-
-    /* efecto luz interna */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(34, 211, 238, 0.4);
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* 6. GRID */
 .quick-access,
 .weeks-grid {
     display: grid;
@@ -237,66 +246,43 @@ body {
     padding: 0 20px;
 }
 
-/* 7. INFO */
+/* 6. INFO SECTION Y FOOTER */
 .info-section {
     padding: 80px 20px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 28px;
-    padding: 45px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 40px;
-    transition: 0.4s;
-    opacity: 0;
-    animation: fadeInUp 1s ease forwards;
-}
-
-.card-glow {
-    position: absolute;
-    left: 0;
-    top: 15%;
-    height: 70%;
-    width: 4px;
-    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
-    box-shadow: 0 0 15px var(--accent-cyan);
-    transition: 0.4s;
-}
-
-.glass-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-.glass-card:hover .card-glow {
-    height: 100%;
-    top: 0;
-}
-
-/* 8. FOOTER */
 .footer {
     text-align: center;
     padding: 4rem;
     opacity: 0.6;
 }
 
-.week-card {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+/* 7. ESTILOS ESPECÍFICOS PARA EL PERFIL */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px; 
 }
 
-html {
-    scroll-behavior: smooth; /* Esto hace que el salto entre secciones sea una animación suave */
+.profile-header {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: -50px; 
+    z-index: 1;
 }
 
-/* ESTILOS ESPECÍFICOS PARA EL PERFIL */
+.profile-large-img {
+    width: 100%;
+    height: 500px; 
+    object-fit: cover; 
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+}
 
-/* Contenedor de la imagen para que sea circular */
 .profile-container {
     width: 150px;
     height: 150px;
@@ -310,67 +296,25 @@ html {
 .profile-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que la foto se estire */
+    object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--bg-dark);
 }
 
-/* Texto de la carrera */
-.career-title {
+.career-title, .career-tag {
     color: var(--accent-cyan);
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* Bloque de biografía */
+.career-title { font-size: 1.1rem; }
+.career-tag { letter-spacing: 1px; }
+
 .profile-bio {
     text-align: center;
     max-width: 500px;
     margin: 0 auto;
     font-size: 0.95rem;
-    line-height: 1.7;
-    opacity: 0.9;
-}
-
-.profile-bio strong {
-    color: white;
-    border-bottom: 2px solid var(--accent-cyan);
-}
-
-/* DISEÑO ESPECÍFICO PARA PÁGINA DE PERFIL */
-
-.profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 120px; /* Espacio para que no choque con la navbar */
-}
-
-.profile-header {
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: -50px; /* Hace que la imagen "entre" un poco en la tarjeta de abajo */
-    z-index: 1;
-}
-
-.profile-large-img {
-    width: 100%;
-    height: 500px; /* Altura fija para que se vea imponente */
-    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--glass-border);
-}
-
-.career-tag {
-    color: var(--accent-cyan);
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.profile-bio {
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -379,52 +323,9 @@ html {
     color: var(--accent-cyan);
 }
 
-/* Responsivo para móviles */
 @media (max-width: 768px) {
-    .profile-large-img {
-        height: 300px;
-    }
-    .profile-header {
-        margin-bottom: 20px;
-    }
-}
-
-/* Contenedor de Marca (Logo + Nombre) */
-.brand-section {
-    display: flex;
-    align-items: center;
-    gap: 25px; /* ¡Aquí está la magia! Lo subimos de 12px a 20px para separarlo más */
-}
-
-/* El logo rectangular/escudo sin círculo */
-.nav-logo {
-    height: 36px; 
-    width: auto;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.3));
-    
-    transform: translateY(-2px); 
-}
-
-/* Tu nombre al lado del logo */
-.user-name {
-    color: white;
-    font-weight: 600;
-    font-size: 1rem;     /* Tamaño estándar visible */
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    line-height: 1;      /* ¡CLAVE! Elimina el espacio invisible arriba y abajo de las letras */
-    margin: 0;
-}
-
-/* Asegura que el contenedor principal mantenga los lados opuestos */
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .profile-large-img { height: 300px; }
+    .profile-header { margin-bottom: 20px; }
 }
 
 
