@@ -367,14 +367,15 @@ html {
 .brand-section {
     display: flex;
     align-items: center;
-    gap: 20px; /* ¡Aquí está la magia! Lo subimos de 12px a 20px para separarlo más */
+    gap: 25px; /* ¡Aquí está la magia! Lo subimos de 12px a 20px para separarlo más */
 }
 
 /* El logo rectangular/escudo sin círculo */
 .nav-logo {
-    height: 32px; 
+    height: 36px; 
     width: auto;
     object-fit: contain;
+    display: block;
     filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.3));
     
     transform: translateY(-2px); 
@@ -384,14 +385,11 @@ html {
 .user-name {
     color: white;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;     /* Tamaño estándar visible */
     letter-spacing: 0.5px;
     white-space: nowrap;
-    
-    /* Añadimos esto para forzar que el texto no tenga márgenes raros */
-    display: flex;
-    align-items: center; 
-    margin-top: 0;
+    line-height: 1;      /* ¡CLAVE! Elimina el espacio invisible arriba y abajo de las letras */
+    margin: 0;
 }
 
 /* Asegura que el contenedor principal mantenga los lados opuestos */
