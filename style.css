@@ -1,4 +1,4 @@
-/* 1. VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL */
+
 :root {
     --bg-dark: #0f172a;
     --accent-cyan: #22d3ee;
@@ -55,7 +55,6 @@ body {
     align-items: center;
 }
 
-/* Estructura para el Logo de la UPLA y tu Nombre */
 .brand-section {
     display: flex;
     align-items: center;
@@ -100,8 +99,7 @@ body {
 }
 
 .hero-glass {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: var(--bg-dark); 
     backdrop-filter: blur(15px);
     padding: 3rem;
     border-radius: 30px;
@@ -112,6 +110,15 @@ body {
     align-items: center;
     animation: fadeInUp 1s ease 0.2s forwards;
     opacity: 0;
+    position: relative;
+
+    /* BORDE DE COLORES INTEGRADO */
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-dark), var(--bg-dark)), 
+                      linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
 }
 
 .hero-logo {
@@ -128,36 +135,22 @@ body {
     transform: scale(1.01);
 }
 
-/* === AQUÍ ESTÁ EL NUEVO EFECTO GLOW PARA TU TÍTULO === */
 .hero-glass h1 {
-    position: relative;
-    display: inline-block;
-    padding-left: 25px; /* Espacio para que quepa la barra */
-    margin-bottom: 5px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
 }
 
-.hero-glass h1::before {
-    content: ''; /* ¡Esto es vital para que la barra exista! */
-    position: absolute;
-    left: 0;
-    top: 10%;
-    height: 80%;
-    width: 5px;
-    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
-    box-shadow: 0 0 15px var(--accent-cyan);
-    border-radius: 10px;
-}
-
-/* === AQUÍ SE BAJA EL TEXTO DEL PÁRRAFO === */
-.hero-glass p {
-    margin-top: 25px; 
-    margin-bottom: 25px; 
-    line-height: 1.6;
-    max-width: 600px; /* Evita que el texto sea demasiado largo */
+.hero-description {
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    max-width: 600px;
 }
 
 .hero-actions {
-    margin-top: 10px; 
     display: flex;
     gap: 20px; 
     justify-content: center;
@@ -326,36 +319,4 @@ body {
 @media (max-width: 768px) {
     .profile-large-img { height: 300px; }
     .profile-header { margin-bottom: 20px; }
-}
-
-/* --- EFECTO DE BARRA LUMINOSA EN TÍTULO --- */
-.title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; /* Espacio entre la línea y el título */
-    margin-bottom: 5px;
-}
-
-.glow-line {
-    width: 6px;
-    height: 45px; /* Altura de la línea */
-    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
-    box-shadow: 0 0 15px var(--accent-cyan);
-    border-radius: 10px;
-}
-
-.title-container h1 {
-    margin: 0; /* Quitamos márgenes para que la línea no se mueva */
-    text-transform: uppercase;
-    font-size: 2.2rem;
-}
-
-/* --- AJUSTE DEL PÁRRAFO --- */
-.hero-description {
-    margin-top: 30px !important; /* Forzamos que baje el párrafo */
-    margin-bottom: 30px;
-    max-width: 600px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
 }
