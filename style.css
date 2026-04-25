@@ -92,6 +92,25 @@ body {
     opacity: 0;
 }
 
+.hero-glass h1 {
+    position: relative;
+    display: inline-block; /* Importante para que la barra se pegue al texto */
+    padding-left: 25px;    /* Espacio para la barra */
+    margin-bottom: 15px;   /* Espacio respecto al párrafo de abajo */
+}
+
+.hero-glass h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;              /* La barra no ocupa todo el alto, para que se vea pro */
+    height: 70%;
+    width: 5px;            /* Grosor de la barra */
+    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+    box-shadow: 0 0 15px var(--accent-cyan);
+    border-radius: 10px;   /* Puntas redondeadas */
+}
+
 /
 .hero-glass p {
     margin-top: 30px;   
